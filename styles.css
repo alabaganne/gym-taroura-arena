@@ -336,8 +336,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero-title .line { display: block; }
 .hero-title .red {
-  color: var(--red);
-  text-shadow: 0 0 60px rgba(255, 77, 0, 0.45);
+  color: var(--black);
+  -webkit-text-stroke: 0.045em var(--red);
+  paint-order: stroke fill;
+  text-shadow: 0 0 40px rgba(255, 77, 0, 0.55);
 }
 
 .hero-sub {
