@@ -55,7 +55,7 @@
         <span class="line">Taroura</span>
         <span class="line red">Arena</span>
       </h1>
-      <p class="hero-sub">Musculation, cardio, cours collectifs et karaté.<br>Entre dans l'arène et deviens plus fort, chaque semaine.</p>
+      <p class="hero-sub">Musculation, cardio, cours collectifs et karaté. <br>Entre dans l'arène et deviens plus fort, chaque semaine.</p>
       <div class="hero-actions">
         <a class="btn btn-red btn-lg" href="#essai">Réserver ma séance d'essai</a>
         <a class="btn btn-line btn-lg" href="#programmes">Voir les programmes</a>
@@ -482,5 +482,13 @@
   </div>
 </footer>
 
+<script>
+  // reduce motion: keep the still poster instead of the moving video
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const v = document.querySelector('.hero-video');
+    v.removeAttribute('autoplay');
+    v.load();
+  }
+</script>
 </body>
 </html>

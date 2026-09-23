@@ -1324,8 +1324,20 @@ ul { margin: 0; padding: 0; list-style: none; }
   .call { padding-top: clamp(64px, 8vw, 100px); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-video { display: none; }
+/* phones and tall screens: keep the boxer in frame */
+@media (max-aspect-ratio: 1/1) {
+  .hero { background-position: 22% center; }
+  .hero-video { object-position: 24% center; }
+  .hero-shade::before {
+    background:
+      radial-gradient(ellipse 80% 55% at 62% 38%, var(--fire), transparent 70%),
+      var(--red);
+  }
+  .hero-shade::after {
+    background:
+      linear-gradient(90deg, rgba(7, 7, 11, 0.6) 0%, rgba(7, 7, 11, 0.2) 45%, rgba(7, 7, 11, 0) 70%),
+      linear-gradient(0deg, rgba(7, 7, 11, 0.92) 0%, rgba(7, 7, 11, 0.45) 40%, transparent 70%);
+  }
 }
 
 @media (max-width: 640px) {
