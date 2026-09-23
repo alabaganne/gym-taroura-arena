@@ -291,19 +291,18 @@ ul { margin: 0; padding: 0; list-style: none; }
   object-fit: cover;
   object-position: 30% center;
   transform: scaleX(-1);
-  filter: grayscale(1) contrast(1.35) brightness(1.2);
+  /* red tint as a filter: iOS Safari won't blend a layer over video */
+  filter: grayscale(1) sepia(1) hue-rotate(-50deg) saturate(8) contrast(1.7) brightness(0.8);
 }
 
 .hero-shade { position: absolute; inset: 0; }
-/* turns the smoke red: the fire look */
+/* warm fire glow */
 .hero-shade::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 70% at 72% 55%, var(--fire), transparent 70%),
-    var(--red);
-  mix-blend-mode: multiply;
+    radial-gradient(ellipse 60% 70% at 72% 55%, rgba(255, 77, 0, 0.25), transparent 70%);
 }
 .hero-shade::after {
   content: "";
@@ -1327,11 +1326,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* phones and tall screens: keep the boxer in frame */
 @media (max-aspect-ratio: 1/1) {
   .hero { background-position: 22% center; }
-  .hero-video { object-position: 24% center; }
+  .hero-video { object-position: 40% center; }
   .hero-shade::before {
     background:
-      radial-gradient(ellipse 80% 55% at 62% 38%, var(--fire), transparent 70%),
-      var(--red);
+      radial-gradient(ellipse 80% 55% at 62% 38%, rgba(255, 77, 0, 0.25), transparent 70%);
   }
   .hero-shade::after {
     background:
