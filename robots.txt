@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taroura-arena.alabaganne.com/sitemap.xml
